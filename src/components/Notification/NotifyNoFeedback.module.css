@@ -1,0 +1,11 @@
+.title {
+  margin: 0 auto;
+  padding: 30px;
+  /* width: 300px; */
+  text-align: center;
+
+  font-size: 40px;
+  font-weight: 700;
+  text-decoration: underline;
+  color: rgb(106, 17, 17);
+}
