@@ -41,7 +41,7 @@ class Statistics extends Component {
             <span className={s.number}>{this.props.total}</span>
           </div>
           <div className={s.ratio}>
-            <span>Positive Ratio:</span>
+            <span>Positive Ratio :</span>
             <span className={s.number}>{this.props.positiveRatio}%</span>
           </div>
         </div>

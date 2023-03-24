@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const SectionStyled = styled.section`
   margin: 0 auto;
   padding: 10px 0 10px;
-  width: 800px;
+  max-width: 800px;
   background-color: rgb(244, 244, 215);
 `;
 
