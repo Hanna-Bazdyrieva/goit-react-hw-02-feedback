@@ -1,7 +1,14 @@
 import { Component } from 'react';
 import PropTypes from 'prop-types';
-import s from './Statistics.module.css';
-import clsx from 'clsx';
+import {
+  Wrap,
+  StatDiv,
+  StatItem,
+  StatType,
+  StatNumber,
+  StatAnalitics,
+  AnaliticsType,
+} from './Statistics.styled';
 
 class Statistics extends Component {
   static dafaultProps = {
@@ -19,33 +26,34 @@ class Statistics extends Component {
     total: PropTypes.number.isRequired,
     positiveRatio: PropTypes.number.isRequired,
   };
+
   render() {
     const stats = Object.entries(this.props.stat);
-    console.log('Statistics -> render -> stats:', stats);
+    // console.log('Statistics -> render -> stats:', stats);
 
     return (
-      <div className={s.wrap}>
-        <div className={s.statistics}>
+      <Wrap>
+        <StatDiv>
           {stats.map(item => {
             return (
-              <div className={clsx(s.statItem, s[item[0]])}>
-                <span className={s.name}>{item[0]}: </span>
-                <span className={s.number}>{item[1]}</span>
-              </div>
+              <StatItem key={item[0]} value={item[0]}>
+                <StatType>{item[0]}: </StatType>
+                <StatNumber>{item[1]}</StatNumber>
+              </StatItem>
             );
           })}
-        </div>
-        <div className={s.calculated}>
-          <div className={s.total}>
-            <span>Total Feedback:</span>
-            <span className={s.number}>{this.props.total}</span>
-          </div>
-          <div className={s.ratio}>
-            <span>Positive Ratio :</span>
-            <span className={s.number}>{this.props.positiveRatio}%</span>
-          </div>
-        </div>
-      </div>
+        </StatDiv>
+        <StatDiv>
+          <StatAnalitics>
+            <AnaliticsType>Total Feedback:</AnaliticsType>
+            <StatNumber>{this.props.total}</StatNumber>
+          </StatAnalitics>
+          <StatAnalitics>
+            <AnaliticsType>Positive Ratio :</AnaliticsType>
+            <StatNumber>{this.props.positiveRatio}%</StatNumber>
+          </StatAnalitics>
+        </StatDiv>
+      </Wrap>
     );
   }
 }

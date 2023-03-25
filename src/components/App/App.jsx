@@ -4,7 +4,6 @@ import Container from '../Container/Container';
 import FeedbackOptions from 'components/FeedbackOptions/FeedbackOptions';
 import NotifyNoFeedback from 'components/Notification/NotifyNoFeedback';
 import Statistics from '../Statistics/Statistics';
-import s from './App.module.css';
 
 class App extends Component {
   state = {
@@ -40,12 +39,10 @@ class App extends Component {
     return (
       <Container>
         <Section title="Please leave your feedback">
-          <div className={s.wrap}>
-            <FeedbackOptions
-              options={buttonNames}
-              onLeaveFeedback={this.onLeaveFeedback}
-            />
-          </div>
+          <FeedbackOptions
+            options={buttonNames}
+            onLeaveFeedback={this.onLeaveFeedback}
+          />
           {this.countTotalFeedback() === 0 && (
             <NotifyNoFeedback message="There is no feedback so far" />
           )}

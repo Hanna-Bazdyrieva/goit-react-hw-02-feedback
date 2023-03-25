@@ -1,8 +1,7 @@
 import { Component } from 'react';
 import PropTypes from 'prop-types';
 import shortid from 'shortid';
-import s from './FeedbackOptions.module.css';
-import clsx from 'clsx';
+import { Wrap, Button } from './FeedbackOptions.styled';
 // const shortid = require('shortid');
 
 class FeedbackOptions extends Component {
@@ -16,30 +15,22 @@ class FeedbackOptions extends Component {
   render() {
     const buttons = this.props.options;
     return (
-      <>
+      <Wrap>
         {buttons.map(btn => {
-          // console.log(
-          //   'FeedbackOptions -> render -> shortid.generate():',
-          //   shortid.generate()
-          // );
-
           return (
-            <>
-              <button
-                key={shortid.generate()}
-                className={clsx(s.button, s[btn])}
-                type="button"
-                value={btn}
-                onClick={event => {
-                  this.props.onLeaveFeedback(event);
-                }}
-              >
-                {btn}
-              </button>
-            </>
+            <Button
+              key={shortid.generate()}
+              type="button"
+              value={btn}
+              onClick={event => {
+                this.props.onLeaveFeedback(event);
+              }}
+            >
+              {btn}
+            </Button>
           );
         })}
-      </>
+      </Wrap>
     );
   }
 }

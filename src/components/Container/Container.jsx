@@ -1,7 +1,7 @@
-import s from './Container.module.css';
+import ContainerStyled from './Container.styled';
 
 function Container({ children }) {
-  return <div className={s.container}>{children}</div>;
+  return <ContainerStyled>{children}</ContainerStyled>;
 }
 
 export default Container;

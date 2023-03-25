@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import s from './NotifyNoFeedback.module.css';
+import NotifyHeader from './NotifyNoFeedback.styled';
 
 class NotifyNoFeedback extends Component {
   static defaultProps = {
@@ -7,7 +7,7 @@ class NotifyNoFeedback extends Component {
   };
 
   render() {
-    return <h2 className={s.title}>{this.props.message}</h2>;
+    return <NotifyHeader>{this.props.message}</NotifyHeader>;
   }
 }
 export default NotifyNoFeedback;
