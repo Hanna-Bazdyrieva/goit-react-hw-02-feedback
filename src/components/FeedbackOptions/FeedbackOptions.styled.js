@@ -1,17 +1,6 @@
 import styled from 'styled-components';
 import setBackgroungColor from 'utils/setBackgroundColor';
 
-export const Wrap = styled.div`
-  display: flex;
-  justify-content: space-around;
-
-  margin: ${p => p.theme.space[4]}px auto;
-  width: ${p => p.theme.space[12]}px;
-  font-size: ${p => p.theme.fontSizes.ml};
-  font-weight: ${p => p.theme.fontWeights.normal};
-  text-transform: capitalize;
-`;
-
 export const Button = styled.button`
   font-size: ${p => p.theme.fontSizes.ml};
   font-weight: ${p => p.theme.fontWeights.bold};

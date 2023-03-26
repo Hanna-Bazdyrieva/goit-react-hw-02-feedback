@@ -1,10 +1,9 @@
 import { Component } from 'react';
 import Section from 'components/Section/Section';
-import Container from '../Container/Container';
 import FeedbackOptions from 'components/FeedbackOptions/FeedbackOptions';
 import NotifyNoFeedback from 'components/Notification/NotifyNoFeedback';
 import Statistics from '../Statistics/Statistics';
-
+import { Box } from 'components/Box/Box';
 class App extends Component {
   state = {
     good: 0,
@@ -37,7 +36,7 @@ class App extends Component {
   render() {
     const buttonNames = Object.keys(this.state);
     return (
-      <Container>
+      <Box mx="auto" my={0} px="0" py={5} bg="container">
         <Section title="Please leave your feedback">
           <FeedbackOptions
             options={buttonNames}
@@ -56,7 +55,7 @@ class App extends Component {
             />
           </Section>
         )}
-      </Container>
+      </Box>
     );
   }
 }

@@ -1,14 +1,7 @@
 import { Component } from 'react';
 import PropTypes from 'prop-types';
-import {
-  Wrap,
-  StatDiv,
-  StatItem,
-  StatType,
-  StatNumber,
-  StatAnalitics,
-  AnaliticsType,
-} from './Statistics.styled';
+import { Box } from 'components/Box/Box';
+import { StatItem, StatType, StatNumber } from './Statistics.styled';
 
 class Statistics extends Component {
   static dafaultProps = {
@@ -29,11 +22,17 @@ class Statistics extends Component {
 
   render() {
     const stats = Object.entries(this.props.stat);
-    // console.log('Statistics -> render -> stats:', stats);
 
     return (
-      <Wrap>
-        <StatDiv>
+      <Box display="flex" flexDirection="column">
+        <Box
+          display="flex"
+          justifyContent="space-between"
+          mx="auto"
+          my="0"
+          p={4}
+          width={2}
+        >
           {stats.map(item => {
             return (
               <StatItem key={item[0]} value={item[0]}>
@@ -42,18 +41,48 @@ class Statistics extends Component {
               </StatItem>
             );
           })}
-        </StatDiv>
-        <StatDiv>
-          <StatAnalitics>
-            <AnaliticsType>Total Feedback:</AnaliticsType>
+        </Box>
+        <Box
+          display="flex"
+          justifyContent="space-between"
+          mx="auto"
+          my="0"
+          p={4}
+          width={2}
+        >
+          <Box
+            width={1}
+            bg="analitics"
+            display="flex"
+            flexDirection="column"
+            alignItems="center"
+            px={4}
+            py={3}
+            borderRadius="normal"
+            border="normal"
+            boxShadow="normal"
+          >
+            <StatType>Total Feedback:</StatType>
             <StatNumber>{this.props.total}</StatNumber>
-          </StatAnalitics>
-          <StatAnalitics>
-            <AnaliticsType>Positive Ratio :</AnaliticsType>
+          </Box>
+          <Box
+            Box
+            width={1}
+            bg="analitics"
+            display="flex"
+            flexDirection="column"
+            alignItems="center"
+            px={4}
+            py={3}
+            borderRadius="normal"
+            border="normal"
+            boxShadow="normal"
+          >
+            <StatType>Positive Ratio :</StatType>
             <StatNumber>{this.props.positiveRatio}%</StatNumber>
-          </StatAnalitics>
-        </StatDiv>
-      </Wrap>
+          </Box>
+        </Box>
+      </Box>
     );
   }
 }

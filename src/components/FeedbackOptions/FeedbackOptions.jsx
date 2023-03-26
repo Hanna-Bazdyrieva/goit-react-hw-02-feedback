@@ -1,9 +1,7 @@
 import { Component } from 'react';
 import PropTypes from 'prop-types';
-import shortid from 'shortid';
-import { Wrap, Button } from './FeedbackOptions.styled';
-// const shortid = require('shortid');
-
+import { Button } from './FeedbackOptions.styled';
+import { Box } from 'components/Box/Box';
 class FeedbackOptions extends Component {
   static defaultProps = {
     options: [],
@@ -15,11 +13,17 @@ class FeedbackOptions extends Component {
   render() {
     const buttons = this.props.options;
     return (
-      <Wrap>
+      <Box
+        display="flex"
+        justifyContent="space-between"
+        mx="auto"
+        my={4}
+        width={2}
+      >
         {buttons.map(btn => {
           return (
             <Button
-              key={shortid.generate()}
+              key={btn}
               type="button"
               value={btn}
               onClick={event => {
@@ -30,7 +34,7 @@ class FeedbackOptions extends Component {
             </Button>
           );
         })}
-      </Wrap>
+      </Box>
     );
   }
 }

@@ -15,6 +15,7 @@ export const theme = {
     heading: 'system-ui, sans-serif',
     monospace: 'Menlo, monospace',
   },
+  sizes: [140, 240, 600, 800, 1200],
   fontSizes: {
     xs: '12px',
     s: '14px',
